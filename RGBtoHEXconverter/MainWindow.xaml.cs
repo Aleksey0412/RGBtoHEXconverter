@@ -1,14 +1,6 @@
-﻿using RGBtoHEXconverter.AppData;
-using System.Text;
+﻿
+using RGBtoHEXconverter.AppData;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace RGBtoHEXconverter
 {
@@ -31,6 +23,18 @@ namespace RGBtoHEXconverter
             int blue = Convert.ToInt32(BlueValueTb.Text);
 
             _converter = new ColorConverter(red,green,blue);
+
+            HEXColorTb.Text = _converter.RGBtoHEX();
+            OutputColorCs.Background = new System.Windows.Media.SolidColorBrush((System.Windows.Media.Color)
+                System.Windows.Media.ColorConverter.ConvertFromString(HEXColorTb.Text));
+        }
+
+        private void CopyColorBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //Добавляем Сконвертированный цвет в буфер для обмена быстрой вставки
+            Clipboard.SetText(HEXColorTb.Text);
+
+            
         }
     }
 }

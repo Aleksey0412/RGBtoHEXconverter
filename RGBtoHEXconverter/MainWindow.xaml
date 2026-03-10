@@ -55,7 +55,7 @@
                 <ColumnDefinition Width="270"/>
             </Grid.ColumnDefinitions>
 
-            <Canvas Name="OutputColorCs"/>
+            <Canvas Name="OutputColorCs" />
 
             <Grid Grid.Column="2">
                 <Grid.ColumnDefinitions>
@@ -68,7 +68,7 @@
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <TextBox Name="HEXColorTb" IsReadOnly="True"/>
-                <Button Name="CopyColorBtn" Grid.Column="2" Content="📄" />
+                <Button Name="CopyColorBtn" Grid.Column="2" Content="📄" Click="CopyColorBtn_Click" />
                 
             </Grid>
             
